@@ -1,0 +1,115 @@
+{% include 'header-post.njk' %}
+
+<main class="main">
+  <div class="container post-container grid">
+    <article class="post">
+      <div class="post__top">
+        {% if video %}
+          <div class="post__video">
+            <iframe src="{{ video }}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        {% else %}
+          <img class="post__image" loading="lazy" src="{{cover}}" aria-hidden="true" alt="">
+        {% endif %}
+        <div class="post__props">
+          <span class="post__category">{{ cat }}</span>
+          <time class="post__date" datetime="{{date}}">{{ date | dateformat }}</time>
+          <span class="post__readtime">{{ content | readingTime }}</span>
+        </div>
+        <h1 class="post__title">{{title}}</h1>
+        <p class="post__descr">
+          {{descr}}
+        </p>
+      </div>
+      <div class="post-content">
+        {{content | safe}}
+      </div>
+      {% if sources %}
+        <div class="post-sources">
+          Исходники по данной теме:
+          <a href="{{ sources }}" target="_blank" class="post-sources__link">
+            <svg>
+              <use xlink:href="/assets/img/sprite.svg#link"></use>
+            </svg>
+            github
+          </a>
+        </div>
+      {% endif %}
+      <div class="post-links">
+        {%- set nextPost = collections.blog | getNextCollectionItem(page) %}
+        {%- if nextPost %}
+          <a href="{{ nextPost.url | url }}" class="post-links__item post-links__item--prev">
+            <svg>
+              <use xlink:href="/assets/img/sprite.svg#left-arrow"></use>
+            </svg>
+            предыдущий пост
+          </a>
+        {% endif %}
+        {%- set previousPost = collections.blog | getPreviousCollectionItem(page) %}
+        {%- if previousPost %}
+          <a href="{{ previousPost.url | url }}" class="post-links__item post-links__item--next">
+            следующий пост
+            <svg>
+              <use xlink:href="/assets/img/sprite.svg#right-arrow"></use>
+            </svg>
+          </a>
+        {% endif %}
+      </div>
+      <article class="post-author">
+        <h2 class="visually-hidden">Об авторе блога</h2>
+        <div class="post-author__image">
+          <img src="/assets/img/author.png" loading="lazy" alt="Автор блога Максим Васянович">
+        </div>
+        <div class="post-author__text">
+          <div class="post-author__name">{{ metadata.author.name }}</div>
+          <div class="post-author__position">{{ metadata.author.descr }}</div>
+          <p class="post-author__descr">
+            Портфолио: <a href="{{ metadata.portfolio }}" target="_blank">{{ metadata.portfolio }}</a> <br>
+            Добавляйтесь в друзья <a href="{{ metadata.vk }}" target="_blank">VK!</a> Каждому добавившемуся и
+            написавшему в
+            личку «хочу полезность» — подарю набор крутых
+            ссылок для верстальщика.
+          </p>
+        </div>
+      </article>
+      <div class="post-bottom">
+        <div class="post-bottom__left">
+          <h3 class="post-bottom__title">предложить исправления</h3>
+          <a href="https://github.com/maxdenaro/blog.maxgraph.ru/blob/main/src/blog/{{ page.fileSlug }}/index.md" target="_blank" class="post-bottom__link">редактировать статью на Гитхабе</a>
+        </div>
+        <div class="post-bottom__right">
+          <h3 class="post-bottom__title">Поделиться</h3>
+          <ul class="social-share">
+            <li class="social-share__item">
+              <button class="btn-reset social-share__btn" aria-label="Поделиться в твиттере" data-social="twitter">
+                <svg>
+                  <use xlink:href="/assets/img/sprite.svg#twitter"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="social-share__item">
+              <button class="btn-reset social-share__btn" aria-label="Поделиться в Фейсбуке" data-social="facebook">
+                <svg>
+                  <use xlink:href="/assets/img/sprite.svg#facebook"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="social-share__item">
+              <button class="btn-reset social-share__btn" aria-label="Поделиться во Вконтакте" data-social="vk">
+                <svg>
+                  <use xlink:href="/assets/img/sprite.svg#vk"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+    {% include 'more-post.njk' %}
+
+  </div>
+</main>
+
+{% include 'footer.njk' %}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon">
+  <meta name="yandex-verification" content="46937a083d5843ec" />
+  <meta name="google-site-verification" content="2gIrKXy-DNtWISty0fvR7e5PBLDGljZZkWyxnCgyR6o" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#151515">
+  <title>{{ metadata.title }}</title>
+  <meta name="description" content="{{ metadata.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ metadata.title }}">
+  <meta property="og:site_name" content="{{ metadata.description }}">
+  <meta property="og:url" content="{{ metadata.url }}">
+  <meta property="og:image" content="{{ metadata.url }}/assets/img/pstshrng.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ metadata.title }}">
+  <meta name="twitter:description" content="{{ metadata.description }}">
+  <meta name="twitter:site" content="{{ metadata.url }}">
+  <meta name="twitter:image" content="{{ metadata.url }}/assets/img/pstshrng.jpg">
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/vendor.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter45762951 = new Ya.Metrika({
+                    id:45762951,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+</head>
+
+<body>
+  {% include 'search.njk' %}
+  <div class="site-container">
+    <header class="header">
+      <div class="container header__container">
+        <a class="logo header__logo" aria-label="Логотип MaxGraph">
+          <svg>
+            <use xlink:href="/assets/img/sprite.svg#logo"></use>
+          </svg>
+        </a>
+        <div class="header__right">
+          {% include 'nav.njk' %}
+          <button class="btn-reset search-btn header__search" aria-label="Открыть поиск">
+            <svg>
+              <use xlink:href="/assets/img/sprite.svg#search"></use>
+            </svg>
+          </button>
+          <button class="btn-reset theme-switch" aria-label="Сменить тему сайта">
+            <svg class="theme-switch__icon dark">
+              <use xlink:href="/assets/img/sprite.svg#toggle-to-dark"></use>
+            </svg>
+            <svg class="theme-switch__icon light">
+              <use xlink:href="/assets/img/sprite.svg#toggle-to-light"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>

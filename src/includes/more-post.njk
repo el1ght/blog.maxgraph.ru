@@ -1,0 +1,30 @@
+<aside class="post-aside">
+  {% if cat %}
+  <div class="post-more">
+    <h2 class="post-more__title">
+      ещё статьи на эту тему:
+    </h2>
+    <ul class="post-more__list">
+      {% for morePost in collections.blog | categoryFilter(cat) | reverse %}
+        {% if loop.index0 < 6 %}
+          {% if title !== morePost.data.title %}
+            <li class="post-more__item">
+              <article class="more-post">
+                <a href="{{ morePost.url }}" class="more-post__link">
+                  <div class="more-post__image">
+                    <span class="more-post__category">{{ morePost.data.cat }}</span>
+                    <img src="{{ morePost.url }}{{ morePost.data.cover }}" loading="lazy" alt="Обложка поста">
+                  </div>
+                  <div class="more-post__text">
+                    <h3 class="more-post__title">{{ morePost.data.title }}</h3>
+                  </div>
+                </a>
+              </article>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</aside>

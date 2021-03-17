@@ -1,0 +1,22 @@
+{% include 'header-devs.njk' %}
+
+<main class="main dev-page">
+  <section class="dev">
+    <div class="container">
+      <h1 class="dev__title">разработки</h1>
+      <ul class="dev__list grid">
+        {% for dev in collections.devs | reverse %}
+          <li class="dev__item">
+            <a href="{{ dev.data.link }}" target="_blank" class="dev-link">
+              <h3 class="dev-link__title">{{ dev.data.title }}</h3>
+              <p class="dev-link__descr">{{ dev.data.descr }}</p>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+{% include 'footer.njk' %}

@@ -1,0 +1,44 @@
+<footer class="footer">
+  <div class="footer__top">
+    <div class="container footer__container">
+      <div class="footer__info">
+        <h2 class="footer__title">{{ metadata.footer_title }}</h2>
+        <p class="footer__descr">{{ metadata.footer_description }}</p>
+      </div>
+      <div class="contacts">
+        <ul class="contacts__list">
+          <li class="contacts__item"><a href="{{ metadata.youtube }}" target="_blank" class="contacts__link">youtube</a></li>
+          <li class="contacts__item"><a href="{{ metadata.telegram }}" target="_blank" class="contacts__link">telegram</a></li>
+          <li class="contacts__item"><a href="{{ metadata.vk }}" target="_blank" class="contacts__link">vk</a></li>
+        </ul>
+        <form class="contacts__form" method="POST" target="_blank"
+          action="https://money.yandex.ru/quickpay/confirm.xml">
+          <input type="hidden" name="receiver" value="410015482170627">
+          <input type="hidden" name="formcomment" value="На поддержка проекта">
+          <input type="hidden" name="short-dest" value="Поддержка проекта 'MaxGraph - блог веб-разработчика'">
+          <input type="hidden" name="label" value="$order_id">
+          <input type="hidden" name="quickpay-form" value="donate">
+          <input type="hidden" name="targets" value="Поддержка проекта MaxGraph">
+          <input type="hidden" name="sum" value="100" data-type="number">
+          <input type="submit" value="Поддержать проект" class="btn-reset contacts__donate">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span class="year">2021</span> &copy; MaxGraph
+  </div>
+</footer>
+
+
+</div>
+
+<script src="/assets/js/vendor.js"></script>
+<script src="/assets/js/main.js"></script>
+<script>
+  const year = new Date().getFullYear();
+  document.querySelector('.year').textContent = year;
+</script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{
+  "title": "Блог веб-разработчика MaxGraph",
+  "url": "https://blog.maxgraph.ru",
+  "email": "maxgraph23@gmail.com",
+  "portfolio": "https://maxgraph.ru/",
+  "telegram": "https://t.me/maxdenaro",
+  "vk": "https://vk.com/write11437510",
+  "youtube": "https://www.youtube.com/channel/UCxJyCit95jsb-JLE3kXnq1Q",
+  "description": "Полезные статьи о веб-разработке. Обучение верстке, инструменты, лайфхаки.",
+  "footer_title": "этот блог о веб-разработке.",
+  "footer_description": "лайфхаки, полезные сервисы, софт, а так же внутренняя кухня фриланса. здесь каждый найдет для себя что-то полезное!",
+  "gift": "/assets/files/cool-links.pdf",
+  "author": {
+    "name": "MaxGraph",
+    "descr": "Автор. Веб-разработчик. Фрилансер. Преподаватель в онлайн-университете.",
+    "email": "maxgraph23@gmail.com"
+  },
+  "feed": {
+    "subtitle": "Полезные статьи о веб-разработке. Обучение верстке, инструменты, лайфхаки.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://blog.maxgraph.ru/"
+  }
+}

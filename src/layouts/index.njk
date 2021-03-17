@@ -1,0 +1,35 @@
+{% include 'header.njk' %}
+
+    <h1 class="visually-hidden">{{ metadata.title }}</h1>
+    <main class="main main-page">
+      <section class="blog">
+        <h2 class="visually-hidden">Список статей блога</h2>
+        <div class="container">
+          <ul class="blog-list grid">
+            {% for post in collections.blog | reverse %}
+            <li class="blog-list__item">
+              <article class="blog-post">
+                <a href="{{post.url}}" class="blog-post__image" tabindex="-1">
+                  <span class="blog-post__category">{{ post.data.cat }}</span>
+                  <img src="{{post.url}}{{post.data.cover}}" loading="lazy" alt="{{ post.data.title }}">
+                </a>
+                <div class="blog-post__props">
+                  <time class="blog-post__date" datetime="{{post.data.date}}">{{post.data.date | dateformat }}</time>
+                  <span class="blog-post__readtime">{{ post.templateContent | readingTime }}</span>
+                </div>
+                <h3 class="blog-post__title">
+                  <a href="{{post.url}}" class="blog-post__link">
+                    {{post.data.title}}
+                  </a>
+                </h3>
+              </article>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <button class="btn-reset blog-more">загрузить еще</button>
+      </section>
+
+    </main>
+
+{% include 'footer.njk' %}

@@ -5,7 +5,7 @@ descr: "Привет! В этой статье расскажу о том, ка�
 description: "В этой статье расскажу о том, как сделать ленту из инстаграма у себя на сайте"
 cover: "img/cover.jpg"
 cat: JS
-# video: "https://www.youtube.com/embed/MUZvekTFH-4"
+video: "https://www.youtube.com/embed/0xOLtBzPv3g"
 sources: "https://github.com/maxdenaro/maxgraph-youtube-source/tree/master/JS-%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD%D1%8B%20%E2%84%9615.%20%D0%9B%D0%B5%D0%BD%D1%82%D0%B0%20%D0%B8%D0%BD%D1%81%D1%82%D1%80%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%B0%20-%20InstagramFeed.js"
 ---
 

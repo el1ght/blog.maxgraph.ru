@@ -6,7 +6,7 @@ description: "Как деплоить сайт с гита на хостинг �
 cover: "img/cover.jpg"
 cat: Разное
 sources: "https://github.com/maxdenaro/deploy-test"
-video: "https://www.youtube.com/embed/6GCOfEtAYaA"
+video: "https://www.youtube.com/embed/_8sN0AaEVyE"
 ---
 
 ## Что потребуется

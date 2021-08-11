@@ -2,7 +2,7 @@
 title: "FadeIn и FadeOut на чистом JS"
 date: "2021-08-11"
 descr: "Привет! В этой статье я расскажу, как реализовать плавную смену свойства display (fadeIn, fadeOut) на чистом JS, без библиотек"
-description: "Как сделать fadeIn и fadeOut на чистом JS? Рассказываю в этой статье"
+description: "Как сделать fadeIn и fadeOut на чистом JS? Рассказываю в этой статье, как не использовать для таких целей jQuery"
 cover: "img/cover.jpg"
 cat: JS
 sources: "https://github.com/maxdenaro/maxgraph-youtube-source/tree/master/JS-%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%20%E2%84%9619.%20FadeIn%2C%20FadeOut"

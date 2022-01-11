@@ -3,13 +3,13 @@
 <main class="main dev-page">
   <section class="ytmap">
     <div class="container">
-      <div class="ytmap__subtitle">видеоблог</div>
-      {# <a href="../" class="ytmap__subtitle">
+      {# <div class="ytmap__subtitle">видеоблог</div> #}
+      <a href="../" class="ytmap__subtitle">
         <svg>
           <use xlink:href="/assets/img/sprite.svg#chevron"></use>
         </svg>
         к карте youtube
-      </a> #}
+      </a>
       <h1 class="ytmap__title">{{ title }}</h1>
       <ul class="ytmap-inner-list grid">
         {% for item in collections[tags_alias] | reverse %}

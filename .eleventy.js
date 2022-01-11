@@ -34,11 +34,11 @@ module.exports = function(eleventyConfig) {
     recursive: true,
   });
 
-  eleventyConfig.addPlugin(pageAssetsPlugin, {
-    mode: "directory",
-    postsMatching: "src/ytmap/**/*.md",
-    recursive: true,
-  });
+  // eleventyConfig.addPlugin(pageAssetsPlugin, {
+  //   mode: "directory",
+  //   postsMatching: "src/ytmap/**/*.md",
+  //   recursive: true,
+  // });
 
   eleventyConfig.addPlugin(readingTime);
 

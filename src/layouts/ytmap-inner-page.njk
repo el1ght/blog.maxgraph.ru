@@ -1,0 +1,34 @@
+{% include 'header-devs.njk' %}
+
+<main class="main dev-page">
+  <section class="ytmap">
+    <div class="container">
+      <div class="ytmap__subtitle">видеоблог</div>
+      {# <a href="../" class="ytmap__subtitle">
+        <svg>
+          <use xlink:href="/assets/img/sprite.svg#chevron"></use>
+        </svg>
+        к карте youtube
+      </a> #}
+      <h1 class="ytmap__title">{{ title }}</h1>
+      <ul class="ytmap-inner-list grid">
+        {% for item in collections[tags_alias] | reverse %}
+          <li class="ytmap-inner-list__item">
+            <article class="ytmap-preview">
+              <a href="{{ item.url }}" class="ytmap-preview__image" tabindex="-1">
+                <img src="{{ item.url }}{{ item.data.cover }}" loading="lazy" alt="{{ item.data.title }}">
+              </a>
+              <h3 class="ytmap-preview__title">
+                <a href="{{ item.url }}" class="ytmap-preview__link">
+                  {{ item.data.title }}
+                </a>
+              </h3>
+            </article>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</main>
+
+{% include 'footer.njk' %}

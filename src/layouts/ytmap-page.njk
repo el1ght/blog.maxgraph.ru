@@ -1,0 +1,28 @@
+{% include 'header-devs.njk' %}
+
+<main class="main dev-page">
+  <section class="ytmap">
+    <div class="container">
+      <span class="ytmap__subtitle">видеоблог</span>
+      <h1 class="ytmap__title">карта youtube-канала</h1>
+      <h2 class="tmp" style="font-size: 40px; color: #fff;">Раздел в разработке!</h2>
+      <a href="https://www.youtube.com/maxgraph" target="_blank"
+        class="ytmap__mainlink">youtube.com/maxgraph</a>
+
+      <ul class="ytmap__list grid">
+        {% for ytmp in collections.ytmap | reverse %}
+          <li class="ytmap__item" data-image="img/yt-12.png">
+            <a href="{{ ytmp.url }}" class="ytmap-card">
+              <h3 class="ytmap-card__title">{{ ytmp.data.title }}</h3>
+              <p class="ytmap-card__descr">{{ ytmp.data.descr }}</p>
+              <span class="ytmap-card__count">{{ collections[ytmp.data.tags_alias].length }}</span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+{% include 'footer.njk' %}

@@ -1,0 +1,52 @@
+{% include 'header-devs.njk' %}
+
+<main class="main dev-page">
+  <section class="ytmap">
+    <div class="container">
+      <a href="../" class="ytmap__subtitle">
+        <svg>
+          <use xlink:href="/assets/img/sprite.svg#chevron"></use>
+        </svg>
+        {{ catname }}
+      </a>
+      <div class="ytmap__video">
+        <iframe src="https://www.youtube.com/embed/{{video}}" title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <h1 class="ytmap__inner-title">{{ title }}</h1>
+      {% if materials %}
+        <h2 class="ytmap__sub">материалы</h2>
+        <ul class="ytmap__list">
+          {% for item in materials | reverse %}
+            <li class="ytmap__list-item">
+              <a href="{{ item.link }}" target="_blank" class="ytmap__list-link">
+                <svg>
+                  <use xlink:href="/assets/img/sprite.svg#link"></use>
+                </svg>
+                {{ item.text }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if links %}
+        <h2 class="ytmap__sub">дополнительные ссылки</h2>
+        <ul class="ytmap__list">
+          {% for item in links | reverse %}
+            <li class="ytmap__list-item">
+              <a href="{{ item.link }}" target="_blank" class="ytmap__list-link">
+                <svg>
+                  <use xlink:href="/assets/img/sprite.svg#link"></use>
+                </svg>
+                {{ item.text }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </section>
+</main>
+
+{% include 'footer.njk' %}
